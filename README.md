@@ -1,7 +1,3 @@
-# MERN4
+Authentication middleware has been added to the officer and sailor routes, so only authenticated users can access these endpoints.
 
-This is the initial README for your MERN4 project.
-
-## Getting Started
-
-Add project details and setup instructions here.
+RBAC authorization is now enforced on both officer and sailor routes. Only users with the correct role and permissions can create or view officers and sailors.

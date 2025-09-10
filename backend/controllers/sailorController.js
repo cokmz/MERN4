@@ -2,8 +2,8 @@ const Sailor = require('../models/Sailor');
 
 exports.createSailor = async (req, res) => {
   try {
-    const { name, rank, department, user } = req.body;
-    const sailor = new Sailor({ name, rank, department, user });
+    const { name, rank, division, branch, user } = req.body;
+    const sailor = new Sailor({ name, rank, division, branch, user });
     await sailor.save();
     res.status(201).json(sailor);
   } catch (err) {

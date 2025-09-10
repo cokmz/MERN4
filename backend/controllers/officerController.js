@@ -2,8 +2,8 @@ const Officer = require('../models/Officer');
 
 exports.createOfficer = async (req, res) => {
   try {
-    const { name, rank, department, user } = req.body;
-    const officer = new Officer({ name, rank, department, user });
+    const { name, rank, department, branch, user } = req.body;
+    const officer = new Officer({ name, rank, department, branch, user });
     await officer.save();
     res.status(201).json(officer);
   } catch (err) {

@@ -6,6 +6,12 @@ const roles = {
       read: ['serviceNo', 'password', 'role'],
       update: ['serviceNo', 'password', 'role'],
       delete: ['serviceNo', 'password', 'role']
+    },
+    officer: {
+      update: ['role'] // can assign officer as ro, go, do
+    },
+    sailor: {
+      update: ['division'] // can assign sailor to division
     }
   },
   co: {
@@ -14,16 +20,22 @@ const roles = {
       read: ['serviceNo', 'password', 'role'],
       update: ['serviceNo', 'password', 'role'],
       delete: ['serviceNo', 'password', 'role']
+    },
+    officer: {
+      update: ['role'] // can assign officer as ro, go, do
+    },
+    sailor: {
+      update: ['division'] // can assign sailor to division
     }
   },
   ro: {
     user: {
-      read: ['serviceNo', 'role']
+      create: ['serviceNo', 'password', 'role'] // can register new user
     }
   },
   go: {
-    user: {
-      read: ['serviceNo', 'role']
+    sailor: {
+      update: ['division'] // can assign sailor to division
     }
   },
   do: {

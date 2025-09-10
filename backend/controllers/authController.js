@@ -18,7 +18,7 @@ exports.register = async (req, res) => {
     const hashedPassword = await bcrypt.hash(password, 10);
     const user = await User.create([{ serviceNo, password: hashedPassword, role }], { session });
     if (role === 'sailor') {
-      await Sailor.create([{ name: '', rank: '', department: '', user: user[0]._id }], { session });
+      await Sailor.create([{ name: '', rank: '', division: '', user: user[0]._id }], { session });
     } else {
       await Officer.create([{ name: '', rank: '', department: '', user: user[0]._id }], { session });
     }

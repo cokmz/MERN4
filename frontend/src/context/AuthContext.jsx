@@ -19,7 +19,8 @@ export const AuthProvider = ({ children }) => {
     const res = await login(serviceNo, password);
     setToken(res.data.token);
     localStorage.setItem('token', res.data.token);
-    setUser(res.data.user);
+    await setUser(res.data.user);
+    await console.log(res.data.user)
   };
 
   const handleLogout = () => {
